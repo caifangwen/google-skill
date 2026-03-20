@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Family Bucket Skill - Prompt 完全手册</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --bg-color: #f8f9fa;
+            --text-color: #202124;
+            --card-bg: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; font-size: 1.1rem; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .card h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .card h2 .icon { font-size: 1.5rem; }
+        .prompt-list { list-style: none; }
+        .prompt-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .prompt-list li:last-child { border-bottom: none; }
+        .prompt-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+        }
+        .prompt-list a:hover { color: var(--primary-color); }
+        .prompt-count {
+            font-size: 0.85rem;
+            color: #666;
+            margin-left: auto;
+        }
+        .integration-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .integration-card h2 { color: white; }
+        .integration-card .prompt-count { color: rgba(255,255,255,0.8); }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚀 Google Family Bucket Skill</h1>
+            <p>Google 全家桶 Claude Prompt 完全手册 · 60+ 提示词</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <div class="card">
+                <h2><span class="icon">📧</span> Gmail <span class="prompt-count">6 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/gmail/README.md">收件箱概览</a></li>
+                    <li><a href="prompts/gmail/README.md">搜索邮件</a></li>
+                    <li><a href="prompts/gmail/README.md">未读邮件整理</a></li>
+                    <li><a href="prompts/gmail/README.md">起草回复</a></li>
+                    <li><a href="prompts/gmail/README.md">新建邮件</a></li>
+                    <li><a href="prompts/gmail/README.md">移动场景</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📅</span> Calendar <span class="prompt-count">7 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/calendar/README.md">今日日程</a></li>
+                    <li><a href="prompts/calendar/README.md">本周概览 + 空闲时间</a></li>
+                    <li><a href="prompts/calendar/README.md">下周预览</a></li>
+                    <li><a href="prompts/calendar/README.md">创建事件</a></li>
+                    <li><a href="prompts/calendar/README.md">修改/删除事件</a></li>
+                    <li><a href="prompts/calendar/README.md">移动场景</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">💾</span> Drive <span class="prompt-count">5 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/drive/README.md">搜索文件</a></li>
+                    <li><a href="prompts/drive/README.md">最近文件概览</a></li>
+                    <li><a href="prompts/drive/README.md">整理建议</a></li>
+                    <li><a href="prompts/drive/README.md">读取文档内容</a></li>
+                    <li><a href="prompts/drive/README.md">保存到 Drive</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📝</span> Docs <span class="prompt-count">5 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/docs/README.md">文档摘要</a></li>
+                    <li><a href="prompts/docs/README.md">对比两个文档</a></li>
+                    <li><a href="prompts/docs/README.md">起草新文档</a></li>
+                    <li><a href="prompts/docs/README.md">润色文档</a></li>
+                    <li><a href="prompts/docs/README.md">会议纪要生成</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📊</span> Sheets <span class="prompt-count">6 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/sheets/README.md">读取表格数据</a></li>
+                    <li><a href="prompts/sheets/README.md">数据查询</a></li>
+                    <li><a href="prompts/sheets/README.md">更新单元格</a></li>
+                    <li><a href="prompts/sheets/README.md">追加新行</a></li>
+                    <li><a href="prompts/sheets/README.md">数据分析</a></li>
+                    <li><a href="prompts/sheets/README.md">自动周报表格</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🎨</span> Slides <span class="prompt-count">3 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/slides/README.md">演示文稿摘要</a></li>
+                    <li><a href="prompts/slides/README.md">生成演示大纲</a></li>
+                    <li><a href="prompts/slides/README.md">生成演讲备注</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">✅</span> Tasks <span class="prompt-count">6 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/tasks/README.md">今日任务列表</a></li>
+                    <li><a href="prompts/tasks/README.md">本周任务概览</a></li>
+                    <li><a href="prompts/tasks/README.md">快速/批量添加任务</a></li>
+                    <li><a href="prompts/tasks/README.md">标记完成</a></li>
+                    <li><a href="prompts/tasks/README.md">移动场景</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📋</span> Forms <span class="prompt-count">3 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/forms/README.md">表单响应总结</a></li>
+                    <li><a href="prompts/forms/README.md">筛选特定答案</a></li>
+                    <li><a href="prompts/forms/README.md">设计表单结构</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">💬</span> Chat <span class="prompt-count">3 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/chat/README.md">搜索消息</a></li>
+                    <li><a href="prompts/chat/README.md">发送消息</a></li>
+                    <li><a href="prompts/chat/README.md">未读消息概览</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">👥</span> Contacts <span class="prompt-count">4 prompts</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/contacts/README.md">搜索联系人</a></li>
+                    <li><a href="prompts/contacts/README.md">生日提醒</a></li>
+                    <li><a href="prompts/contacts/README.md">更新联系人</a></li>
+                    <li><a href="prompts/contacts/README.md">整理重复联系人</a></li>
+                </ul>
+            </div>
+
+            <div class="card integration-card">
+                <h2><span class="icon">🔗</span> Integration <span class="prompt-count">10 workflows</span></h2>
+                <ul class="prompt-list">
+                    <li><a href="prompts/integration/README.md">晨间智能简报</a></li>
+                    <li><a href="prompts/integration/README.md">会前准备 / 会后整理</a></li>
+                    <li><a href="prompts/integration/README.md">项目周报 / 任务拆解</a></li>
+                    <li><a href="prompts/integration/README.md">邮件转日程 / 日程汇总邮件</a></li>
+                    <li><a href="prompts/integration/README.md">周末规划 / 旅行准备 / 每日收尾</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Google Family Bucket Skill · CC BY-NC-SA 4.0</p>
+        <p>Generated by Claude Sonnet 4.6 · 2026-03-20</p>
+    </footer>
+</body>
+</html>
